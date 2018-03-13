@@ -9,7 +9,7 @@ function drawTable(edge,n) {
   for (var i = 0; i < n; i++) {
     ss = ss+"<tr>";
     for (var j = 0; j < n; j++) {
-      ss = ss +"<td width='1' height='1' style='background-color:rgb(255, 255, 255)' onclick='test(this)'>";
+      ss = ss +"<td width='1' height='1' style='background-color:rgb(255, 255, 255)' onclick='setLive(this)'>";
       ss = ss+"</td>";
     }
     ss = ss+"</tr>";
@@ -19,7 +19,7 @@ function drawTable(edge,n) {
   $('#cell_div').html(ss);
 }
 
-function test(obj){
+function setLive(obj){
   $(obj).css("background-color","rgb(255, 0, 0)");
 }
 
