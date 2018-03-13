@@ -15,7 +15,7 @@ function drawTable(edge,n) {
     ss = ss+"</tr>";
   }
   ss = ss+"</table>";
-  ss = ss +"<button type='button' class='btn btn-primary' onclick='run()'>run</button>"
+  ss = ss +"<button type='button' class='btn btn-primary' onclick='run()'>run</button>";
   $('#cell_div').html(ss);
 }
 
@@ -31,19 +31,6 @@ function setLiveOrDie(){
   $('#cell_table > tbody > tr > td').each(function() {
     var col = $(this).index();
     var row = $(this).closest('tr').index();
-    /*
-    if($(this).css("background-color")==="rgb(255, 0, 0)"&&count(row+1,col+1) < 2){
-      $('#cell_table tr:nth-child('+(row+1)+') td:nth-child('+(col+1)+')').attr('class','dead');
-    } else if ($(this).css("background-color")==="rgb(255, 0, 0)"&&count(row+1,col+1) > 1&&count(row+1,col+1) < 4){
-      $('#cell_table tr:nth-child('+(row+1)+') td:nth-child('+(col+1)+')').attr('class','live');		
-    } else if ($(this).css("background-color")==="rgb(255, 0, 0)"&&count(row+1,col+1) > 3){
-      $('#cell_table tr:nth-child('+(row+1)+') td:nth-child('+(col+1)+')').attr('class','dead');
-    } else if ($(this).css("background-color")==="rgb(255, 255, 255)"&&count(row+1,col+1) === 3){
-      $('#cell_table tr:nth-child('+(row+1)+') td:nth-child('+(col+1)+')').attr('class','live');	
-    } else {
-      $('#cell_table tr:nth-child('+(row+1)+') td:nth-child('+(col+1)+')').attr('class','dead');
-    }
-    */
     
     if(($(this).css("background-color")==="rgb(255, 0, 0)"&&count(row+1,col+1) > 1&&count(row+1,col+1) < 4) || ($(this).css("background-color")==="rgb(255, 255, 255)"&&count(row+1,col+1) === 3)){
       $('#cell_table tr:nth-child('+(row+1)+') td:nth-child('+(col+1)+')').attr('class','live');
@@ -53,7 +40,6 @@ function setLiveOrDie(){
   });
   
   $('#cell_table > tbody > tr > td').each(function() {
-    console.log("hi");
     if($(this).attr('class')==='live'){
       $(this).css('background-color','rgb(255, 0, 0)');
     }else {
